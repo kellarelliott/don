@@ -20,10 +20,10 @@ async function getCases() {
         let tableRow =
           '<tr>' +
           `<td class='cell'>${item.state}</td>` +
-          `<td class='cell'>${item.deathConfirmed}</td>` +
-          `<td class='cell'>${item.positive}</td>` +
-          `<td class='cell'>${item.negative}</td>` +
-          `<td class='cell'>${item.total}</td>` + '</tr>'
+          `<td class='cell'>${formatNumber(item.deathConfirmed)}</td>` +
+          `<td class='cell'>${formatNumber(item.positive)}</td>` +
+          `<td class='cell'>${formatNumber(item.negative)}</td>` +
+          `<td class='cell'>${formatNumber(item.total)}</td>` + '</tr>'
         return tableRow
       })
         .join('') + '</table>';
@@ -77,13 +77,13 @@ function sortTable(n) {
       if (n !== 0) {
         if (dir == "asc") {
 
-          if (Number(x.innerHTML) > Number(y.innerHTML)) {
+          if (Number(x.innerHTML.replace(/,/g, '')) > Number(y.innerHTML.replace(/,/g, ''))) {
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
           }
         } else if (dir == "desc") {
-          if (Number(x.innerHTML) < Number(y.innerHTML)) {
+          if (Number(x.innerHTML.replace(/,/g, '')) < Number(y.innerHTML.replace(/,/g, ''))) {
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
@@ -143,3 +143,6 @@ function sortTable(n) {
   }
 }
 
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
