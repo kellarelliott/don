@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body{
+  margin: 0;
+}
+
+
+
+.hero {
+  height: 8em;
+  width: 100%;
+  background: url(hero.jpg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  color: white;
+}
+
+
+
+
+.none{
+  display: none;
+}
+
+.article {
+  border-bottom: solid lightgray 1px;
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+
+}
+
+h2 {
+  font-family: 'Bitter', serif;
+  margin-top: 10px;
+  margin-bottom: 10px;;
+}
+
+button{
+  cursor: pointer;
+  border-radius: 2rem;
+  background-color: white;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+
+}

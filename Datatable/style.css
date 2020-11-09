@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+body {
+  margin: 0;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.up::after {
+  content: "\f062";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.down::after {
+  content: "\f063";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+#table {
+  width: 95%;
+  border-collapse: collapse;
+}
+
+tr:nth-child(2n) {
+  background: #f2f2f2;
+}
+
+#deathsHeader::after {
+  content: '* -99 = not reported';
+  font-size: 10px;
+  position: absolute;
+  top: 40px;
+}
+
+th {
+  height: 3em;
+  cursor: pointer;
+  border-bottom: thin solid;
+}
+
+.arrow {
+  margin-left: 3px;
+}
+
+td {
+  height: 2em;
+}
+
+th, td {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */
