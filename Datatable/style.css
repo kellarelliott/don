@@ -43,11 +43,10 @@ tr:nth-child(2n) {
   background: #f2f2f2;
 }
 
-#deathsHeader::after {
+#table::after {
   content: '* -99 = not reported';
-  font-size: 10px;
+  font-size: 1em;
   position: absolute;
-  top: 40px;
 }
 
 th {
@@ -68,5 +67,11 @@ th, td {
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  th, td {
+    font-size: 1em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
