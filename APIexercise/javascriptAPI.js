@@ -45,11 +45,13 @@ function addClick() {
   }
 
   function clickedButton(e) {
-
+    //find the id value of what was clicked
     let id = e.target.attributes.id.value;
+    //replace button with description to you can find the correct description to display
     let descriptionIdNum = id.replace('button', 'description');
     let descriptionShowing = document.getElementById(descriptionIdNum);
 
+    //toggle description between displaying and hiding
     if (descriptionShowing.className === 'none') {
       descriptionShowing.className = 'description';
     } else {
@@ -61,6 +63,7 @@ function addClick() {
   }
 }
 
+//give the readButton and description same id number
 function sameID() {
   let readMoreButton = document.getElementsByClassName('readMoreButton')
 

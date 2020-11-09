@@ -11,6 +11,7 @@ async function getCases() {
     let data = await response.json();
     let container = document.getElementById('container');
 
+    //Create table and map out data
     container.innerHTML = '<table id="table"><tr><th id="stateHeader" class="tableHeader" onclick="sortTable(0)">State<span class="arrow"><span class="down"></span></span></th><th id="deathsHeader" class="tableHeader"  onclick="sortTable(1)">Deaths<span class="arrow"></span></th><th id="positiveHeader" class="tableHeader" onclick="sortTable(2)">Positive Cases<span class="arrow"></span></th><th id="negativeHeader" class="tableHeader" onclick="sortTable(3)">Negative Cases<span class="arrow"></span></th><th id="totalHeader" class="tableHeader" onclick="sortTable(4)">Total Cases<span class="arrow"></span></th></tr>' +
       data.map(function (item) {
         if (item.deathConfirmed === null) {
@@ -35,6 +36,7 @@ async function getCases() {
   addClick();
 }
 
+//Add click option to all table headers
 function addClick() {
   let tableHeaders = document.getElementsByClassName('tableHeader');
 
@@ -42,7 +44,6 @@ function addClick() {
 
     tableHeaders[i].addEventListener('click', sortTable);
   }
-
 }
 
 
@@ -76,7 +77,7 @@ function sortTable(n) {
       based on the direction, asc or desc:*/
       if (n !== 0) {
         if (dir == "asc") {
-
+          //Check between x and y. Replace all commas so can compare numbers
           if (Number(x.innerHTML.replace(/,/g, '')) > Number(y.innerHTML.replace(/,/g, ''))) {
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
@@ -107,6 +108,7 @@ function sortTable(n) {
 
     }
     if (shouldSwitch) {
+      //Start to code adding up or down arrow to table header
       header = rows[0]
       headerArray = header.getElementsByClassName('arrow');
       if (dir === 'asc') {
@@ -143,6 +145,8 @@ function sortTable(n) {
   }
 }
 
+
+//Add thousands seperator
 function formatNumber(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
