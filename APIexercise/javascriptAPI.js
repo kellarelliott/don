@@ -1,4 +1,4 @@
-let key = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=81154ab211fa427385692bcdbfb3dfaf';
+let key = config.apiKey;
 
 
 
